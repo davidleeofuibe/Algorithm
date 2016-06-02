@@ -10,10 +10,10 @@
  * }
  */
 public class Solution {
-    /**
+    /*
      * The key point here is to find the parent of a node rather than the node.
-     * After find the node, two cases: right child is null, then change the parent corresponding child to node left child. if not, then need to find left most node 
-     * in the right subtree of node, use it to replace node and delete this node.
+     * After find the node, two cases: right child is null, then change the parent corresponding child to node left child. 
+     * if not, then need to find left most node in the right subtree of node, use it to replace node and delete this node.
      * Pay special attention to the case where not find this value.(else{return dummy.left;})
      */
     public TreeNode removeNode(TreeNode root, int value) {
