@@ -27,8 +27,12 @@ public class Test {
         
     }
     public static void main(String args[]){
-        Test test=new Test();
-        test.isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#");
+        // Test test=new Test();
+        // test.isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#");
+
+        int x=1;
+        int y=x<0?x*=2:x=+1;
+        System.out.println(y);
     }
 
     class Node{

@@ -1,35 +1,33 @@
-import java.util.*;
+public class Solution{
+    public int divide(int dividend, int divisor) {
+        if(dividend<divisor) return 0;
+        if(divisor==0) return Integer.MAX_VALUE;
+        
+        boolean positive=true;
+        if((dividend>0 && divisor<0) || (dividend<0 && divisor>0)){
+            positive=false;
+        }
+        
+        long dividendl=Math.abs((long)dividend);
+        long divisorl=Math.abs((long)divisor);
+        
+        int rst=0;
+        System.out.println(dividendl);
+        while(dividendl>=divisorl){
+            System.out.println("here");
+            int n=1;
+            while((divisorl<<n)<=dividendl){
+                n++;
+            }
+            rst=rst+(1<<(n-1));
+            dividendl=dividendl-(divisorl<<(n-1));
+        }
+        
+        return positive?rst:(-rst);
+    }
 
-public class Solution {
-	public static int[] intersect(int[] nums1, int[] nums2) {
-		ArrayList<Integer> list=new ArrayList<Integer>();
-		Arrays.sort(nums1);
-		Arrays.sort(nums2);
-		int i=0;
-		int j=0;
-		while(i<nums1.length && j<nums2.length){
-			System.out.println("here")
-			if(nums1[i]==nums2[j]){
-				System.out.print(Object obj)
-				list.add(nums1[i]);
-				i++;
-				j++;
-			}else if(nums1[i]>nums2[j]){
-				j++;
-			}else{
-				i++;
-			}
-		}
-		int[] result=new int[list.size()];
-		for(int k=0;k<list.size();k++){
-			result[k]=list.get(k);
-		}
-		return result;
-	}
-	
-	public static void main(String args[]){
-		int[] nums1={1};
-		int[] nums2={1};
-		intersect(nums1, nums2);
-	}
+    public static void main(String args[]){
+        Solution s=new Solution();
+        s.divide(-2147483648,10);
+    }
 }
